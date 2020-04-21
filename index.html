@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Binary Calculator by Gaurav Kabra</title>
+        <link rel="stylesheet" href="css/binaryCalculator.css" type="text/css">
+        <script src="js/binaryCalculator.js" type="text/javascript"></script>
+    </head>
+    <body class="body-class">
+        <textbox id="res"></textbox>
+        <div id="btns">
+            <button class="zero-one all" id="btn0" onclick="addZero()">0</button>
+            <button class="zero-one all" id="btn1" onclick="addOne()">1</button>
+            <button class="clr-eql all" id="btnClr" onclick="reset()">C</button>
+            <button class="clr-eql all" id="btnEql" onclick="evaluateIt()">=</button>
+            <br>
+            <button class="oper all" id="btnSum" onclick="addPlus()">+</button>
+            <button class="oper all" id="btnSub" onclick="addMinus()">-</button>
+            <button class="oper all" id="btnMul" onclick="addMul()">*</button>
+            <button class="oper all" id="btnDiv" onclick="addDiv()">/</button>
+        </div>
+    </body>
+</html>
