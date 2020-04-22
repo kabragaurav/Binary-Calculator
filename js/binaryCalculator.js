@@ -20,7 +20,7 @@ function binToDec(s) {
 
 function decToBin(n) {
   if(n<=0)
-  		return "0";
+      return "0";
   var result = '';
   // find highest integer power of 2 equal or less then n
   var order = Math.floor(Math.log2(n));
@@ -49,17 +49,29 @@ function evaluateIt(){
     try{
       if(expr.includes("+"))
           arr=expr.split('+');
-      if(expr.includes("-"))
+      else if(expr.includes("-"))
           arr=expr.split('-');
-      if(expr.includes("*"))
+      else if(expr.includes("*"))
           arr=expr.split('*');
-      if(expr.includes("/"))
+      else if(expr.includes("/"))
           arr=expr.split('/');
+      else{
+        document.getElementById("res").innerHTML = expr;
+        return;
+      }
       // arr should have exactly 2 strings
       //E.g. if 1--1 is entered
       // then arr=["1","","1"] (you can check from Opera's Inspect Element's Console window)
-      if(arr.length!=2)	
-      	throw "Invalid expression";
+      if(arr.length!=2) 
+        throw "Invalid expression";
+      if(arr[0].includes("+")||arr[1].includes("+"))
+        throw "More than one operators";
+      else if(arr[0].includes("-")||arr[1].includes("-"))
+        throw "More than one operators";
+      else if(arr[0].includes("*")||arr[1].includes("*"))
+        throw "More than one operators";
+      else if(arr[0].includes("/")||arr[1].includes("/"))
+        throw "More than one operators";
       console.log(arr[0]);
       console.log(arr[1]);
       dec1 = binToDec(arr[0]);
@@ -74,8 +86,8 @@ function evaluateIt(){
           result=dec1*dec2;
       if(expr.includes("/"))
       {
-      	if(dec2==0)
-      		throw "Denominator cannot be 0";
+        if(dec2==0)
+          throw "Denominator cannot be 0";
         result=dec1/dec2;
       }
       //convert back to string
