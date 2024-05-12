@@ -8,4 +8,4 @@ It is quite robust as it can detect invalid expressions like "1--1"<br> or inval
 If you still find some functionality that is not working then create a pull request.
 Division is integer division. All numbers are positive.
 ##### Demo:
-Visit: https://gaurav-kabra-official.github.io/Binary-Calculator/
+Visit: https://kabragaurav.github.io/Binary-Calculator/
